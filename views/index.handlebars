@@ -1,0 +1,38 @@
+<h1>Ice Cream Shoppe</h1>
+
+<img src="/assets/images/icecream.png" alt="ice cream cone" width="100px">
+
+<h2>Ice Cream Flavors to Eat</h2>
+
+<ul>
+    {{#each icecreams}} {{#unless devoured}}
+    <li>
+        {{icecream_name}}
+
+        <button class="devour" data-id="{{id}}">
+        Devour
+        </button>
+    </li>
+    {{/unless}} {{/each}}
+</ul>
+
+<h2>Eaten Ice Cream Flavors</h2>
+
+<ul>
+    {{#each icecreams}} {{#if devoured}}
+    <li>
+        {{icecream_name}}
+    </li>
+    {{/if}} {{/each}}
+</ul>
+
+<h2>Add an ice cream flavor</h2>
+<form class="addIce">
+
+    <div class="form-group">
+        <label for="name">Ice Cream Name:</label>
+        <input type="text" id="name" name="name">
+    </div>
+
+    <button type="submit">submit</button>
+</form>
